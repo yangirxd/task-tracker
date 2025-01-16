@@ -39,6 +39,7 @@ func listRun(cmd *cobra.Command, args []string) {
 	items, err := todo.ReadItems(viper.GetString("dataFile"))
 	if err != nil {
 		log.Printf("%v", err)
+		return
 	}
 
 	sort.Sort(todo.ByPri(items))
